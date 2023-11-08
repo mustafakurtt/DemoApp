@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  webapi:
+    build:
+      context: .
+      dockerfile: WebAPI/Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+      - "5000:5000"
+    depends_on:
+      - mysql
+      - postgres
+    environment:
+      ConnectionStrings__Mysql: "server=mysql;port=3306;database=DemoAppDb;user=root;password=mbww4HkMA;"
+      ConnectionStrings__Postgre: "Host=postgres;Port=5432;Database=DemoAppDb;Username=postgres;Password=mbww4HkMA;"
+
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: DemoAppDb
+      MYSQL_ROOT_PASSWORD: mbww4HkMA
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: DemoAppDb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mbww4HkMA
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  mysql-data:
+  postgres-data:

@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="12.0.1" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+		<PackageReference Include="FluentValidation" Version="11.8.0" />
+		<PackageReference Include="MediatR" Version="12.1.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Features\Categories\Commands\" />
+	  <Folder Include="Features\Categories\Constants\" />
+	  <Folder Include="Features\Categories\Queries\" />
+	  <Folder Include="Features\Categories\Profiles\" />
+	  <Folder Include="Features\Products\Commands\" />
+	  <Folder Include="Features\Products\Constants\" />
+	  <Folder Include="Features\Products\Queries\" />
+	  <Folder Include="Features\Products\Profiles\" />
+	  <Folder Include="Features\Suppliers\Commands\" />
+	  <Folder Include="Features\Suppliers\Constants\" />
+	  <Folder Include="Features\Suppliers\Queries\" />
+	  <Folder Include="Features\Suppliers\Profiles\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Core\Core.csproj" />
+	  <ProjectReference Include="..\Domain\Domain.csproj" />
+	</ItemGroup>
+
+</Project>

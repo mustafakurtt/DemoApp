@@ -1,0 +1,13 @@
+﻿namespace Application.Features.Products.Queries.GetById;
+
+public class GetByIdProductQueryResponse
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public decimal Price { get; set; }
+    public string CategoryName { get; set; }
+    public string SupplierName { get; set; }
+    public DateTime CreatedDate { get; set; }
+    public DateTime UpdatedDate { get; set; }
+    public DateTime DeletedDate { get; set; }
+}
